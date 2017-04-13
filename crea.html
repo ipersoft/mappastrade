@@ -142,7 +142,9 @@ function processSnapToRoadResponse(data) {
 
 // Draws the snapped polyline (after processing snap-to-road response).
 function drawSnappedPolyline() {
-document.getElementById('percorso').value=snappedCoordinates;
+var s1 =snappedCoordinates.toString();
+var s2= "[" + s1.replace(/\(/g,"[").replace(/\)/g,"]") + "]";
+document.getElementById('percorso').value=s2;
   var snappedPolyline = new google.maps.Polyline({
     path: snappedCoordinates,
     strokeColor: 'black',
