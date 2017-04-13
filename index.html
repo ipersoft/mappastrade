@@ -31,7 +31,6 @@
 <body data-ng-controller="defaultController">
 
   <ng-map   map-type-control="true" map-type-control-options="{position:'TOP_CENTER'}"  default-style="false" zoom="14" center="45.618600, 9.207690" >
-	<marker position="current" animation="Animation.BOUNCE" title="Tua posizione" icon="{url:'man.png'}"></marker>
 	 <shape ng-repeat="f in pois| filter: { TITLEFLG: false }" name="polyline"
        on-click="leftOpen(event,f)"
        path="{{f.PATH}}"
@@ -42,9 +41,9 @@
      </shape>
 
 	<custom-control id="title" position="TOP_LEFT" index="1">
-	<div style="padding: 10px;">
-	<h3><b>Città di Desio</b></h3>
-		<p>Demo strade</p> 
+	<div style="padding: 10px;background: rgba(255, 255, 255, 0.8)">
+	<h3><b>{{pois[0].TITLE}}</b></h3>
+		<p>{{pois[0].NOTE}}</p> 
 	</div>
 	</custom-control>    
 	<custom-control id="by" position="BOTTOM_LEFT" index="1">
