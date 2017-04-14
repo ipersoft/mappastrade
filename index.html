@@ -87,7 +87,7 @@
 		NgMap.getMap().then(function(map) {
 			$scope.map = map;
 		});
-$http.get("https://www.ipersoft.it/desio/route?id=1")
+$http.get("https://raw.githubusercontent.com/ipersoft/mappastrade/master/dati.json")
     .then(function(response) {
         $scope.pois = response.data;
     });	
